@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Eunoia - Beautiful thinking begins with care.</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body style="background: {{ background }};">
+    <div class="container">
+        <!-- App Title + Tagline -->
+        <div class="header">
+            <h1 class="app-title">Eunoia</h1>
+            <p class="subtitle">“Beautiful thinking begins with care.”</p>
+        </div>
+
+        <p id="quote" class="quote">“{{ quote }}”</p>
+
+        <!-- Chat window -->
+        <div class="chat-card" id="chat">
+            <div class="bot-msg">
+                Hi, I’m <strong>Eunoia</strong>. I can share supportive information and practical next steps.<br>
+                How are you feeling today?
+            </div>
+        </div>
+
+        <!-- Suggested buttons -->
+        <div class="suggestions">
+            <button onclick="setQuestion('Anxiety')">Anxiety</button>
+            <button onclick="setQuestion('Sleep')">Sleep</button>
+            <button onclick="setQuestion('Low mood')">Low mood</button>
+            <button onclick="setQuestion('Study stress')">Study stress</button>
+        </div>
+
+        <!-- Input area -->
+        <div class="input-area">
+            <input type="text" id="question" placeholder="Ask Eunoia anything…" />
+            <button onclick="askBot()">Ask</button>
+        </div>
+
+        <p class="disclaimer">
+            Eunoia provides general information only and isn’t a diagnosis. If unsure, consider talking to a professional.
+        </p>
+
+        <!-- Footer -->
+        <footer>
+            <p>
+                If you’re in immediate danger or thinking of self-harm, please call emergency services now. 
+                <a href="https://www.lifeline.org.au" target="_blank">Lifeline</a> · 
+                <a href="https://headspace.org.au" target="_blank">Headspace</a> · 
+                <a href="https://www.blackdoginstitute.org.au" target="_blank">Black Dog Institute</a>
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        const quotes = {{ quotes|tojson }};
+        const backgrounds = {{ backgrounds|tojson }};
+        let quoteIndex = 0;
+        let bgIndex = 0;
+
+        // Cycle quotes and backgrounds
+        setInterval(() => {
+            quoteIndex = (quoteIndex + 1) % quotes.length;
+            bgIndex = (bgIndex + 1) % backgrounds.length;
+            document.getElementById("quote").innerText = "“" + quotes[quoteIndex] + "”";
+            document.body.style.background = backgrounds[bgIndex];
+        }, 20000);
+
+        async function askBot() {
+            const input = document.getElementById("question");
+            const question = input.value.trim();
+            if (!question) return;
+
+            // Add user message
+            const chat = document.getElementById("chat");
+            const userMsg = document.createElement("div");
+            userMsg.className = "user-msg";
+            userMsg.innerText = question;
+            chat.appendChild(userMsg);
+
+            input.value = "";
+
+            // Fetch answer
+            const response = await fetch("/ask", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ question })
+            });
+
+            const data = await response.json();
+
+            // Add bot reply
+            const botMsg = document.createElement("div");
+            botMsg.className = "bot-msg";
+            botMsg.innerHTML = data.answer; // changed to innerHTML so span renders
+            chat.appendChild(botMsg);
+
+            chat.scrollTop = chat.scrollHeight; // auto scroll
+        }
+
+        function setQuestion(text) {
+            document.getElementById("question").value = text;
+        }
+    </script>
+</body>
+</html>

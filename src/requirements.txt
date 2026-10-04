@@ -1,0 +1,13 @@
+requests
+faiss-cpu
+numpy
+ollama
+beautifulsoup4
+pandas
+Flask
+tqdm
+python-slugify
+readability-lxml
+robotexclusionrulesparser
+lxml
+PyYAML

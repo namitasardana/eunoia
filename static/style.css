@@ -1,0 +1,236 @@
+:root{
+  --max-width: 1100px;
+  --card-radius: 16px;
+  --card-shadow: 0 8px 30px rgba(13, 30, 57, 0.08);
+  --muted: #777;
+  --accent: #4a90e2;
+  --bot-bg: #f6f7fb;
+  --user-bg: #4a90e2;
+}
+
+/* Page & background transition */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Inter", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  color: #222;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  transition: background 1s ease-in-out;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  padding-top: 54px; /* space for header/top area */
+}
+
+/* Main container that holds everything */
+.container {
+  width: min(var(--max-width), 94%);
+  margin: 0 auto;
+  padding: 18px;
+  box-sizing: border-box;
+}
+
+/* Header area (title + subtitle) */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+.app-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.2px;
+}
+.subtitle {
+  margin: 0;
+  font-size: 14px;
+  color: var(--muted);
+  font-style: normal;
+  opacity: 0.95;
+}
+
+/* Quote line centered under header */
+.quote {
+  font-style: italic;
+  font-size: 15px;
+  color: #111;
+  margin: 12px 0 18px 0;
+  text-align: center;
+}
+
+/* The big central chat card (large rounded white panel) */
+.chat-card {
+  background: #fff;
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  padding: 22px;
+  text-align: left;
+  width: 100%;
+  box-sizing: border-box;
+  /* make it large and scrollable */
+  height: clamp(360px, 60vh, 680px);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* small label in the very top left of card like screenshot */
+.chat-card .intro {
+  margin: 0;
+  padding: 14px;
+  background: linear-gradient(180deg, rgba(0,0,0,0.01), rgba(0,0,0,0.01));
+  border-radius: 10px;
+  color: #222;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+/* conversation bubbles - bot (left) and user (right) */
+.bot-msg {
+  background: var(--bot-bg);
+  color: #111;
+  padding: 14px 16px;
+  border-radius: 12px;
+  max-width: 88%;
+  align-self: flex-start;
+  box-shadow: 0 3px 10px rgba(50,60,80,0.04);
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.user-msg {
+  background: var(--user-bg);
+  color: #fff;
+  padding: 12px 16px;
+  border-radius: 12px;
+  max-width: 88%;
+  align-self: flex-end;
+  font-size: 15px;
+  line-height: 1.4;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* Suggestions pill buttons beneath the chat card */
+.suggestions {
+  margin-top: 12px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.suggestions button {
+  border: none;
+  background: #fff;
+  color: #333;
+  padding: 8px 12px;
+  border-radius: 999px;
+  margin: 0;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(60,80,120,0.06);
+  font-size: 13px;
+}
+.suggestions button:hover{
+  transform: translateY(-1px);
+  transition: transform .12s ease;
+}
+
+/* Input area (keeps its own spacing below suggestions) */
+.input-area {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+  align-items: center;
+}
+.input-area input {
+  flex: 1;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #d9dbe3;
+  font-size: 15px;
+  outline: none;
+  min-width: 0;
+}
+.input-area button {
+  padding: 11px 16px;
+  border-radius: 10px;
+  border: none;
+  background: var(--accent);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(74,144,226,0.18);
+}
+.input-area button:hover { filter: brightness(.95); }
+
+/* small disclaimer under input */
+.disclaimer {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 12px;
+  text-align: left;
+}
+
+/* Footer (urgent help) pinned visually below */
+footer{
+  margin-top: 18px;
+  font-size: 13px;
+  color: var(--muted);
+  text-align: center;
+}
+footer a { color: var(--accent); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+
+/* Make sure chat content has smooth scroll behaviour */
+.chat-card::-webkit-scrollbar { height: 8px; width: 10px; }
+.chat-card::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.08); border-radius: 8px; }
+
+/* Responsive: narrower screens */
+@media (max-width: 900px){
+  .app-title { font-size: 22px; }
+  .subtitle { font-size: 13px; }
+  .quote { font-size: 14px; margin-bottom: 14px; }
+  .chat-card { height: clamp(300px, 56vh, 560px); padding: 18px; }
+  .input-area input { font-size: 14px; }
+  .user-msg, .bot-msg { font-size: 14px; max-width: 92%; }
+}
+
+/* Mobile: stack inputs nicely and tighten padding */
+@media (max-width: 520px){
+  body { padding-top: 50px; }
+  .container { width: 96%; padding: 14px; }
+  .header { flex-direction: column; align-items: center; gap: 6px; }
+  .app-title { font-size: 20px; }
+  .subtitle { font-size: 12px; }
+  .chat-card { height: 48vh; padding: 14px; }
+  .input-area { gap: 8px; }
+  .input-area input { padding: 10px; }
+  .input-area button { padding: 10px 12px; }
+  .suggestions { justify-content: center; }
+  .disclaimer { font-size: 12px; }
+}
+/* supportive / friendly messages */
+.support-msg {
+  background: #e7f6ec; /* light green background */
+  color: #1d4d2d;      /* darker green text */
+  padding: 12px 14px;
+  border-radius: 12px;
+  max-width: 75%;
+  align-self: flex-start;
+  box-shadow: 0 2px 8px rgba(0, 80, 40, 0.08);
+  font-size: 14px;
+  line-height: 1.45;
+  font-style: italic;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  margin-top: -6px;  /* tuck it closer under bot-msg */
+}

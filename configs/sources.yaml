@@ -1,0 +1,16 @@
+sources:
+  - name: "Beyond Blue"
+    seeds:
+      - "https://www.beyondblue.org.au/mental-health/what-is-stress"
+      - "https://www.beyondblue.org.au/mental-health/anxiety"
+      - "https://www.beyondblue.org.au/mental-health/suicide-prevention"
+      - "https://www.beyondblue.org.au/mental-health/suicide-prevention/suicide-safety-planning"
+      - "https://www.beyondblue.org.au/mental-health/suicide-prevention/suicidal-feelings"
+      - "https://www.beyondblue.org.au/mental-health/loneliness"
+      - "https://www.beyondblue.org.au/mental-health/depression"
+    content_selectors:
+      - "main article"
+      - "article"
+      - "[data-component='rich-text']"
+      - ".bb-article__content"
+    min_paragraph_chars: 30

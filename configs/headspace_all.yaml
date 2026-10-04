@@ -1,0 +1,57 @@
+conditions:
+  - disease: "Anxiety"
+    help_url: "https://headspace.org.au/explore-topics/for-young-people/anxiety/"
+    resources:
+      - label: "other"
+        url: "https://headspace.org.au/assets/Factsheets/headspace_understanding-anxiety_Fact-Sheet_FA01_DIGI.pdf"
+
+  - disease: "ADHD"
+    help_url: "https://headspace.org.au/explore-topics/for-young-people/adhd/"
+    resources: []
+
+  - disease: "Bipolar Disorder"
+    help_url: "https://headspace.org.au/explore-topics/for-young-people/bipolar/"
+    resources: []
+
+  - disease: "Autism"
+    help_url: "https://headspace.org.au/explore-topics/for-young-people/autism-spectrum-disorder/"
+    resources: []
+
+  - disease: "Depression"
+    help_url: "https://headspace.org.au/explore-topics/for-young-people/depression/"
+    resources:
+      - label: "other"
+        url: "https://headspace.org.au/assets/download-cards/07-Depression-headspace-fact-sheet-WEB.pdf"
+
+  - disease: "Eating Disorder"
+    help_url: "https://headspace.org.au/explore-topics/for-young-people/eating-disorders/"
+    resources:
+      - label: "other"
+        url: "https://headspace.org.au/assets/Factsheets/009-HS-Factsheet-Eating-Disorders_V02.pdf"
+      # If you get a video URL later, add it like:
+      # - label: "video"
+      #   url: "https://...."
+
+  - disease: "Obsessive–Compulsive Disorder"
+    help_url: "https://headspace.org.au/explore-topics/for-young-people/ocd/"
+    resources: []
+
+  - disease: "Psychosis"
+    help_url: "https://headspace.org.au/explore-topics/for-young-people/psychosis/"
+    resources:
+      - label: "other"
+        url: "https://headspace.org.au/assets/Uploads/Resource-library/Young-people/headspace_understanding-psychosis_Fact-Sheet_FA01_DIGI.pdf"
+
+  - disease: "Self-harm"
+    help_url: "https://headspace.org.au/explore-topics/for-young-people/self-harm/"
+    resources:
+      - label: "other"
+        url: "https://headspace.org.au/assets/Uploads/Centres/Sunshine/15-Self-harm-headspace-fact-sheet-WEB-V3.pdf"
+
+  - disease: "Suicide"
+    help_url: "https://headspace.org.au/explore-topics/for-young-people/mental-ill-health/suicide-1/"
+    resources: []
+
+  - disease: "Trauma"
+    help_url: "https://headspace.org.au/explore-topics/for-young-people/trauma/"
+    resources: []

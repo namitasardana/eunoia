@@ -1,0 +1,93 @@
+conditions:
+  - disease: "Anxiety"
+    resources:
+      - label: "base"
+        url: "https://www.lifeline.org.au/media/ggbj2rwt/lifeline-australia-anxiety-fact-sheet.pdf"
+
+  - disease: "Depression"
+    resources:
+      - label: "base"
+        url: "https://www.lifeline.org.au/media/kpmjhjgz/lifeline-australia-depression-fact-sheet.pdf"
+
+  - disease: "Domestic and Family Violence"
+    resources:
+      - label: "base"
+        url: "https://www.lifeline.org.au/media/sygnvyap/lifeline-australia-dfv-fact-sheet.pdf"
+
+  - disease: "Eating and Body Image Challenges"
+    resources:
+      - label: "base"
+        url: "https://www.lifeline.org.au/media/3hebqryp/lifeline-australia-eating-and-body-image-fact-sheet.pdf"
+
+  - disease: "Financial Stress"
+    resources:
+      - label: "base"
+        url: "https://www.lifeline.org.au/media/3vloaxxa/lifeline-australia-financial-stress-fact-sheet.pdf"
+
+  - disease: "Grief and Loss"
+    resources:
+      - label: "base"
+        url: "https://www.lifeline.org.au/media/kvnhjzes/lifeline-australia-grief-and-loss-fact-sheet.pdf"
+
+  - disease: "Loneliness"
+    resources:
+      - label: "base"
+        url: "https://www.lifeline.org.au/media/cqjfw03b/lifeline-australia-loneliness-fact-sheet.pdf"
+
+  - disease: "Natural Disasters"
+    resources:
+      - label: "base"
+        url: "https://www.lifeline.org.au/media/wenamaez/lifeline-australia-natural-disasters-fact-sheet.pdf"
+
+  - disease: "Panic Attacks"
+    resources:
+      - label: "base"
+        url: "https://www.lifeline.org.au/media/jwwbw5zv/lifeline-australia-panic-attacks-fact-sheet.pdf"
+
+  - disease: "Problem Gambling"
+    resources:
+      - label: "base"
+        url: "https://www.lifeline.org.au/media/kgen55w3/lifeline-australia-problem-gambling-fact-sheet.pdf"
+
+  - disease: "Psychosis"
+    resources:
+      - label: "base"
+        url: "https://www.lifeline.org.au/media/uunjpvcy/lifeline-australia-psychosis-fact-sheet.pdf"
+
+  - disease: "Self-harm"
+    resources:
+      - label: "base"
+        url: "https://www.lifeline.org.au/media/nh3hn5gx/lifeline-australia-self-harm-fact-sheet.pdf"
+
+  - disease: "Stress"
+    resources:
+      - label: "base"
+        url: "https://www.lifeline.org.au/media/qqil1qak/lifeline-australia-stress-fact-sheet.pdf"
+
+  - disease: "Substance Misuse"
+    resources:
+      - label: "base"
+        url: "https://www.lifeline.org.au/media/ojwf5lsk/lifeline-australia-substance-misuse-fact-sheet.pdf"
+
+  - disease: "Suicide"
+    resources:
+      - label: "base"
+        url: "https://www.lifeline.org.au/media/2n3lhwlr/lifeline-australia-suicidal-thoughts-and-feelings-fact-sheet.pdf"
+      - label: "other"
+        url: "https://www.lifeline.org.au/media/tklbzhpb/have-you-lost-someone-to-suicide-toolkit.pdf"
+      - label: "other"
+        url: "https://www.lifeline.org.au/media/oagowxc4/web-oct_ll-2pp-fact-sheet_i-tried-to-end-my-life.pdf"
+      - label: "other"
+        url: "https://www.lifeline.org.au/media/3fzlcsza/web-revd_june-2022_ll-2pp-toolkit_help-someone-at-risk-of-suicide.pdf"
+      - label: "other"
+        url: "https://www.lifeline.org.au/media/2uzp3v41/rev1_sept_ll-4pp-tool-kit_suicide-prevention-info-aboriginal-tsi-people.pdf"
+
+  - disease: "Trauma"
+    resources:
+      - label: "base"
+        url: "https://www.lifeline.org.au/media/azsjhtdc/lifeline-australia-trauma-fact-sheet.pdf"
+
+  - disease: "psychological impact of epidemic/ pandemic"
+    resources:
+      - label: "base"
+        url: "https://www.lifeline.org.au/media/3g4hhs5q/web-mar2020-ll-2pp-tool-kit-covid-19-wfnwoqjmgwhq-301321.pdf"
